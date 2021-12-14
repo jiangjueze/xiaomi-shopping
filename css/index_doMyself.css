@@ -1,0 +1,607 @@
+/* 1.最上面的导航条 */
+
+
+/* 顶部导航条 */
+
+.top-nav {
+    background-color: #333;
+    width: 100%;
+    /* height: 40px; */
+    line-height: 40px;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+
+/* 设置a链接 */
+
+.top-nav a {
+    text-decoration: none;
+    color: #b0b0b0;
+}
+
+.item:hover a {
+    color: white;
+}
+
+
+/* 导航条左侧 */
+
+.top-nav .left-items {
+    float: left;
+    margin-left: 100px;
+}
+
+.left-items .item,
+.left-items .line {
+    float: left;
+}
+
+
+/* 导航条右侧 */
+
+.top-nav .right-items {
+    float: right;
+    margin-right: 75px;
+}
+
+.right-items .item,
+.right-items .line {
+    float: left;
+}
+
+
+/* 导航条右侧的购物车 */
+
+.right-items .shop-car {
+    width: 120px;
+    margin: 0 25px;
+    background-color: #424242;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.icon-14shopcar {
+    font-size: 20px;
+    line-height: 20px;
+    vertical-align: -3px;
+}
+
+
+/* 设置分割线 */
+
+.top-nav .line {
+    width: 1px;
+    height: 13px;
+    background-color: #424242;
+    margin: 13px 8px;
+}
+
+
+/* 下载app的下拉框 */
+
+.app-list {
+    display: none;
+    width: 100px;
+    height: 120px;
+    background-color: #fff;
+    position: absolute;
+    /* border:1px solid gray; */
+    top: 40px;
+    left: -18px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    ;
+    z-index: 1;
+}
+
+.app-list::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+}
+
+.top-nav .left-items .app {
+    position: relative;
+}
+
+.top-nav .left-items .app:hover .app-list {
+    display: block;
+}
+
+
+/* 购物车下拉框 */
+
+.top-nav .right-items .shop-car .shop-list {
+    display: none;
+    width: 301px;
+    height: 100px;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    right: 0;
+    z-index: 20;
+}
+
+.top-nav .right-items .shop-car {
+    position: relative;
+}
+
+.top-nav .right-items .shop-car:hover {
+    background-color: white;
+}
+
+.top-nav .right-items .shop-car:hover .shop-list {
+    display: block;
+}
+
+.top-nav .right-items .shop-car:hover a {
+    color: #ff6700;
+}
+
+
+/* 2.第二部分的导航条 */
+
+
+/* 设置总体容器 */
+
+.shop-nav {
+    width: 1226px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+}
+
+
+/* 去除a链接样式 */
+
+.shop-nav a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+
+/* 设置小米图标 */
+
+.shop-nav .icon-icon-xiaomiguishu {
+    font-size: 55px;
+    color: #FF6700;
+    float: left;
+}
+
+
+/* 设置手机列表容器 */
+
+.shop-nav .phones {
+    width: 700px;
+    /* padding: 0 100px 0 250px; */
+    margin-left: 160px;
+    float: left;
+    position: relative;
+}
+
+.shop-nav .phones .phone {
+    float: left;
+    margin-right: 20px;
+}
+
+
+/* 设置搜索列表 */
+
+.shop-nav .search {
+    width: 296px;
+    height: 50px;
+    float: right;
+    position: relative;
+}
+
+.shop-nav .search-text {
+    width: 296px;
+    height: 49px;
+    margin-top: 25px;
+    border: 1px solid #b0b0b0;
+    float: right;
+    position: relative;
+    z-index: 10;
+}
+
+.shop-nav .icon-sousuo {
+    /* cursor: pointer; */
+    color: #616161;
+    position: absolute;
+    left: 263px;
+    top: 0;
+}
+
+.shop-nav .search .gray-line {
+    width: 1px;
+    height: 50px;
+    background-color: #b0b0b0;
+    position: absolute;
+    top: 25px;
+    left: 244px;
+}
+
+.shop-nav .search .search-box {
+    width: 238px;
+    height: 45px;
+    position: absolute;
+    top: -1px;
+    color: #616161;
+}
+
+
+/* 设置小米手机下拉框 */
+
+.phone-list {
+    display: none;
+    width: 1905px;
+    height: 200px;
+    background-color: #fff;
+    border-top: 1px solid #a09d9d;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+    position: absolute;
+    top: 100px;
+    left: -555px;
+    z-index: 2;
+}
+
+.phone:hover .phone-list {
+    display: block;
+}
+
+.phone:hover a {
+    color: #FF6700;
+}
+
+
+/* 3.设置中间块，左侧+轮播图 */
+
+
+/* 设置总体容器 */
+
+.middle-nav {
+    width: 1226px;
+    height: 460px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+/* 设置左侧购物导航栏 */
+
+.middle-left-shops {
+    float: left;
+    width: 234px;
+    height: 460px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+.middle-left-shops a {
+    text-decoration: none;
+    color: white;
+}
+
+.middle-left-shops .middle-left-shop {
+    height: 42px;
+    line-height: 42px;
+    padding-left: 30px;
+}
+
+.middle-left-shops .middle-left-shop:first-child {
+    margin-top: 20px;
+}
+
+.middle-left-shop .icon-icon-youcedaohanglan-zhiding-copy {
+    float: right;
+    margin-right: 30px;
+}
+
+
+/* 设置右侧图片栏 */
+
+.middle-nav .img-box {
+    width: 992px;
+    height: 460px;
+    float: left;
+    position: relative;
+}
+
+.middle-nav .img-box img {
+    width: 992px;
+    height: 460px;
+    position: absolute;
+}
+
+.middle-nav .img-box .circle-box {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+
+/* .middle-nav .img-box a:nth-child(2) img {
+            z-index: 5;
+        } */
+
+.middle-nav .img-box .circle-box .circle-nav {
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+.middle-nav .img-box .circle-box .circle-nav.highlight {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.middle-nav .img-box .circle-box .circle-nav:hover {
+    background-color: rgba(255, 255, 255, .4);
+}
+
+.middle-nav .img-box .arrow-box .left-arrow {
+    position: absolute;
+    font-size: 45px;
+    top: 200px;
+    color: #b0b0b0;
+}
+
+.middle-nav .img-box .arrow-box .right-arrow {
+    position: absolute;
+    font-size: 30px;
+    padding: 10px;
+    top: 202px;
+    right: 8px;
+    color: #b0b0b0;
+}
+
+.middle-nav .img-box .arrow-box .left-arrow:hover,
+.middle-nav .img-box .arrow-box .right-arrow:hover {
+    background-color: #333333;
+}
+
+
+/* 设置左侧弹出框 */
+
+
+/* 手机、电视、笔记本、家电(大) */
+
+.middle-left-shops .middle-left-shop .middle-left-shop-biglist {
+    display: none;
+    width: 992px;
+    height: 459px;
+    background-color: #fff;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 0;
+    left: 233px;
+    z-index: 10;
+}
+
+.middle-left-shops .middle-left-shop:hover .middle-left-shop-biglist {
+    display: block;
+}
+
+.middle-left-shops .middle-left-shop:hover {
+    background-color: #FF6700;
+}
+
+
+/* 出行、智能、儿童、耳机、生活 */
+
+.middle-left-shops .middle-left-shop .middle-left-shop-middlelist {
+    display: none;
+    width: 800px;
+    height: 459px;
+    background-color: #fff;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 0;
+    left: 233px;
+    z-index: 10;
+}
+
+.middle-left-shops .middle-left-shop:hover .middle-left-shop-middlelist {
+    display: block;
+}
+
+
+/* 电源 */
+
+.middle-left-shops .middle-left-shop .middle-left-shop-smalllist {
+    display: none;
+    width: 600px;
+    height: 459px;
+    background-color: #fff;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 0;
+    left: 233px;
+    z-index: 10;
+}
+
+.middle-left-shops .middle-left-shop:hover .middle-left-shop-smalllist {
+    display: block;
+}
+
+
+/* 4.设置底部块 */
+
+
+/* 设置总体框 */
+
+.bottom-nav {
+    width: 1226px;
+    height: 170px;
+    margin: 20px auto 0 auto;
+}
+
+
+/* 设置icon框 */
+
+.bottom-nav .icon-box {
+    float: left;
+    width: 234px;
+    height: 170px;
+    background-color: #5F5750;
+    position: relative;
+}
+
+.bottom-nav .icon-box .icon {
+    float: left;
+    width: 76px;
+    height: 85px;
+    line-height: 85px;
+    text-align: center;
+    /* padding:10px 0; */
+}
+
+.bottom-nav .icon-box .icon a {
+    color: #CFCCCA;
+}
+
+.bottom-nav .icon-box .icon i {
+    font-size: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.bottom-nav .icon-box .icon .icon-text1 {
+    position: absolute;
+    top: 29px;
+    left: 10px;
+}
+
+.bottom-nav .icon-box .icon .icon-text2 {
+    position: absolute;
+    top: 29px;
+    left: 86px;
+}
+
+.bottom-nav .icon-box .icon .icon-text3 {
+    position: absolute;
+    top: 29px;
+    left: 162px;
+}
+
+.bottom-nav .icon-box .icon .icon-text4 {
+    position: absolute;
+    top: 115px;
+    left: 16px;
+}
+
+.bottom-nav .icon-box .icon .icon-text5 {
+    position: absolute;
+    top: 115px;
+    left: 86px;
+}
+
+.bottom-nav .icon-box .icon .icon-text6 {
+    position: absolute;
+    top: 115px;
+    left: 162px;
+}
+
+.bottom-nav .icon-box .icon a {
+    text-decoration: none;
+}
+
+.bottom-nav .icon-box .icon .icon-text1::after {
+    content: '';
+    width: 1px;
+    height: 70px;
+    background-color: #706055;
+    position: absolute;
+    top: -10px;
+    left: 66px;
+}
+
+.bottom-nav .icon-box .icon .icon-text2::after {
+    content: '';
+    width: 1px;
+    height: 70px;
+    background-color: #706055;
+    position: absolute;
+    top: -10px;
+    left: 66px;
+}
+
+.bottom-nav .icon-box .icon .icon-text4::after {
+    content: '';
+    width: 1px;
+    height: 70px;
+    background-color: #706055;
+    position: absolute;
+    top: -18px;
+    left: 60px;
+}
+
+.bottom-nav .icon-box .icon .icon-text5::after {
+    content: '';
+    width: 1px;
+    height: 70px;
+    background-color: #706055;
+    position: absolute;
+    top: -18px;
+    left: 66px;
+}
+
+.bottom-nav .icon-box .icon .icon-text1::before {
+    content: '';
+    width: 64px;
+    height: 1px;
+    background-color: #706055;
+    position: absolute;
+    top: 64px;
+    left: -4px;
+}
+
+.bottom-nav .icon-box .icon .icon-text2::before {
+    content: '';
+    width: 64px;
+    height: 1px;
+    background-color: #706055;
+    position: absolute;
+    top: 64px;
+    left: 74px;
+}
+
+.bottom-nav .icon-box .icon .icon-text3::before {
+    content: '';
+    width: 64px;
+    height: 1px;
+    background-color: #706055;
+    position: absolute;
+    top: 64px;
+    left: -79px;
+}
+
+.bottom-nav .icon-box .icon:hover a {
+    color: white;
+}
+
+
+/* 设置右边三张图片 */
+
+.bottom-nav .bottom-img {
+    margin-left: 2px;
+    float: left;
+}
+
+.bottom-nav .bottom-img img {
+    width: 316px;
+    height: 170px;
+    margin: 0 6px;
+}

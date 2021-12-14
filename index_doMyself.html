@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米商城自己做</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./fa/css/all.css">
+    <link rel="stylesheet" href="./css/base_doMyself.css">
+    <link rel="stylesheet" href="./css/index_doMyself.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_3010397_35odho68dik.css">
+    <style>
+        /* 5.设置右侧固定栏 */
+        /* 设置总容器 */
+        
+        .fixed-nav {
+            width: 26px;
+            height: 206px;
+            position: fixed;
+            z-index: 999;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .fixed-nav a {
+            text-decoration: none;
+        }
+        
+        .fixed-nav a:hover i {
+            background-color: #FF6700;
+        }
+        
+        .fixed-nav a i {
+            font-size: 20px;
+            color: #CFCCCA;
+            padding: 5px 0;
+            border-bottom: 1px solid rgb(236, 235, 235);
+        }
+        /* 设置左侧弹框 */
+        /* 手机的弹框 */
+        
+        .fixed-icon .shouji-list {
+            display: none;
+            width: 120px;
+            height: 150px;
+            position: absolute;
+            background-color: rgb(211, 208, 208);
+            right: 40px;
+            z-index: 100;
+            top: 0px;
+        }
+        
+        .fixed-nav .fixed-icon:hover .shouji-list {
+            display: block;
+        }
+        /* 剩下4个文字弹框 */
+        
+        .fixed-nav .fixed-text-list1 {
+            display: none;
+            width: 60px;
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+            background-color: rgb(233, 231, 231);
+            position: absolute;
+            z-index: 100;
+            left: -80px;
+            top: 28px;
+        }
+        
+        .fixed-nav .fixed-text-list::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid rgb(233, 231, 231);
+            position: absolute;
+            right: -16px;
+            top: 7px;
+        }
+        
+        .fixed-nav .fixed-icon:hover .fixed-text-list {
+            display: block;
+        }
+        
+        .fixed-nav .fixed-text-list2 {
+            display: none;
+            width: 60px;
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+            background-color: rgb(233, 231, 231);
+            position: absolute;
+            z-index: 100;
+            left: -80px;
+            top: 58px;
+        }
+        
+        .fixed-nav .fixed-text-list3 {
+            display: none;
+            width: 60px;
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+            background-color: rgb(233, 231, 231);
+            position: absolute;
+            z-index: 100;
+            left: -80px;
+            top: 88px;
+        }
+        
+        .fixed-nav .fixed-text-list4 {
+            display: none;
+            width: 60px;
+            height: 30px;
+            padding-left: 10px;
+            line-height: 30px;
+            background-color: rgb(233, 231, 231);
+            position: absolute;
+            z-index: 100;
+            left: -80px;
+            top: 118px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xiaomi">
+        <!-- 顶部导航栏 -->
+        <div class="top-nav clearfix">
+            <ul class="left-items">
+                <li class="item"><a href="#">小米商城</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">MIUI</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">loT</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">云服务</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">金融</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">商品</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">小爱开放平台</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">企业团购</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">资质证照</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">协议规则</a></li>
+                <li class="line"></li>
+
+                <li class="item app">
+                    <a href="#">下载app</a>
+                    <div class="app-list"></div>
+                </li>
+                <li class="line"></li>
+
+
+                <li class="item"><a href="#">Select Location</a></li>
+            </ul>
+
+            <ul class="right-items">
+                <li class="item"><a href="#">登录</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">注册</a></li>
+                <li class="line"></li>
+
+                <li class="item"><a href="#">消息通知</a></li>
+
+                <li class="item shop-car">
+                    <a href="#">
+                        <i class="iconfont icon-14shopcar"></i> 购物车( 0 )
+                    </a>
+                    <div class="shop-list"></div>
+                </li>
+            </ul>
+        </div>
+        <!-- 购买列表导航栏 -->
+        <div class="shop-nav">
+            <a href="https://www.mi.com/"><i class="iconfont icon-icon-xiaomiguishu"></i></a>
+            <ul class="phones clearfix">
+                <li class="phone">
+                    <a href="#">小米手机</a>
+                    <div class="phone-list"></div>
+                </li>
+                <li class="phone">
+                    <a href="#">Redmi红米</a>
+                    <div class="phone-list"></div>
+                </li>
+                <li class="phone">
+                    <a href="#">电视</a>
+                    <div class="phone-list"></div>
+                </li>
+                <li class="phone">
+                    <a href="#">笔记本</a>
+                    <div class="phone-list"></div>
+                </li>
+                <li class="phone">
+                    <a href="#">家电</a>
+                    <div class="phone-list"></div>
+                </li>
+                <li class="phone">
+                    <a href="#">路由器</a>
+                    <div class="phone-list"></div>
+                </li>
+                <li class="phone">
+                    <a href="#">智能硬件</a>
+                    <div class="phone-list"></div>
+                </li>
+                <li class="phone">
+                    <a href="#">服务</a>
+                </li>
+                <li class="phone">
+                    <a href="#">社区</a>
+                </li>
+            </ul>
+            <div class="search">
+                <div class="search-text">
+                    <input class="search-box" type="text" value="路由器">
+                </div>
+                <div class="gray-line"></div>
+                <!-- 这里有点瑕疵，a链接没东西，里面这个i被我弄跑了，导致点不了这个i，应该给外面的a加position，移动a好点 -->
+                <a href="#"><i class="iconfont icon-sousuo"></i></a>
+            </div>
+        </div>
+        <!-- 中间块(左侧购物导航+轮播图) -->
+        <div class="middle-nav">
+            <ul class="middle-left-shops">
+                <li class="middle-left-shop">
+                    <a href="#">
+                        手机 电话卡
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-biglist">1</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        电视 盒子
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-biglist">2</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        笔记本 平板
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-biglist">3</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        家电 插线板
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-biglist">4</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        出行 穿戴
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-middlelist">1</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        智能 路由器
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-middlelist">2</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        电源 配件
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-smalllist">1</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        健康 儿童
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-middlelist">3</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        耳机 音箱
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-middlelist">4</div>
+                </li>
+                <li class="middle-left-shop">
+                    <a href="#">
+                        生活 箱包
+                        <i class="iconfont icon-icon-youcedaohanglan-zhiding-copy"></i>
+                    </a>
+                    <div class="middle-left-shop-middlelist">5</div>
+                </li>
+            </ul>
+            <div class="img-box">
+                <a href="#">
+                    <img src="./img/1.webp" alt="">
+                </a>
+                <a href="#">
+                    <img src="./img/2.jpg" alt="">
+                </a>
+                <a href="#">
+                    <img src="./img/3.webp" alt="">
+                </a>
+                <a href="#">
+                    <img src="./img/4.webp" alt="">
+                </a>
+                <div class="circle-box clearfix">
+                    <div class="circle-nav highlight"></div>
+                    <div class="circle-nav"></div>
+                    <div class="circle-nav"></div>
+                    <div class="circle-nav"></div>
+                    <div class="circle-nav"></div>
+                </div>
+                <div class="arrow-box">
+                    <a href="#"><i class="iconfont icon-zuocedaohanglanshouqizhankaianniu left-arrow"></i></a>
+                    <a href="#"><i class="iconfont icon-icon-youcedaohanglan-zhiding-copy right-arrow"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- 底部块(一个框加三张图) -->
+        <ul class="bottom-nav">
+            <li class="icon-box">
+                <div class="icon">
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-xiaomimiaosha"></i>
+                        </a>
+                    </div>
+                    <div class="icon-text1">
+                        <a href="#">小米秒杀</a>
+                    </div>
+                </div>
+                <div class="icon">
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-qiyetuangou-copy"></i>
+                        </a>
+                    </div>
+                    <div class="icon-text2">
+                        <a href="#">企业团购</a>
+                    </div>
+                </div>
+                <div class="icon">
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-Fnum"></i>
+                        </a>
+                    </div>
+                    <div class="icon-text3">
+                        <a href="#">F码通道</a>
+                    </div>
+                </div>
+                <div class="icon">
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-mifenqia"></i>
+                        </a>
+                    </div>
+                    <div class="icon-text4">
+                        <a href="#">米粉卡</a>
+                    </div>
+                </div>
+                <div class="icon">
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-yijiuhuanxin"></i>
+                        </a>
+                    </div>
+                    <div class="icon-text5">
+                        <a href="#">以旧换新</a>
+                    </div>
+                </div>
+                <div class="icon">
+                    <div>
+                        <a href="#">
+                            <i class="iconfont icon-huafeichongzhi"></i>
+                        </a>
+                    </div>
+                    <div class="icon-text6">
+                        <a href="#">话费充值</a>
+                    </div>
+                </div>
+            </li>
+            <li class="bottom-img">
+                <a href="#">
+                    <img src="./img/5.jpg" alt="">
+                </a>
+            </li>
+            <li class="bottom-img">
+                <a href="#">
+                    <img src="./img/6.jpg" alt="">
+                </a>
+            </li>
+            <li class="bottom-img">
+                <a href="#">
+                    <img src="./img/7.jpeg" alt="">
+                </a>
+            </li>
+        </ul>
+        <!-- 右侧固定栏 -->
+        <ul class="fixed-nav">
+            <li class="fixed-icon">
+                <a href="#">
+                    <i class="iconfont icon-shouji"></i>
+                </a>
+                <div class="shouji-list"></div>
+            </li>
+            <li class="fixed-icon">
+                <a href="#">
+                    <i class="iconfont icon-geren"></i>
+                </a>
+                <div class="fixed-text-list1 fixed-text-list clearfix">个人中心</div>
+            </li>
+            <li class="fixed-icon">
+                <a href="#">
+                    <i class="iconfont icon-wxbgongju"></i>
+                </a>
+                <div class="fixed-text-list2 fixed-text-list clearfix">售后服务</div>
+            </li>
+            <li class="fixed-icon">
+                <a href="#">
+                    <i class="iconfont icon-24gl-headset"></i>
+                </a>
+                <div class="fixed-text-list3 fixed-text-list clearfix">人工客服</div>
+            </li>
+            <li class="fixed-icon">
+                <a href="#">
+                    <i class="iconfont icon-gouwuche"></i>
+                </a>
+                <div class="fixed-text-list4 fixed-text-list clearfix">购物车</div>
+            </li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>
